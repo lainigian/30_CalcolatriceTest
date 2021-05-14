@@ -16,19 +16,15 @@ import org.junit.Before;
  */
 public class CalcolatriceTest 
 {
-    Calcolatrice c1;
-    @Before
-    public void inizializzazione()
-    {
-       c1=new Calcolatrice();;
-    }
+    
+   
     /**
      * Test of somma method, of class Calcolatrice.
      */
     @Test
     public void testSomma()
     {
-        //Calcolatrice c1= new Calcolatrice();
+        Calcolatrice c1= new Calcolatrice();
         int atteso,attuale;
         
         atteso=8;
@@ -43,7 +39,7 @@ public class CalcolatriceTest
     @Test
     public void testSottrai()
     {
-        //Calcolatrice c1= new Calcolatrice();
+        Calcolatrice c1= new Calcolatrice();
         int atteso,attuale;
         
         atteso=-2;
@@ -58,7 +54,7 @@ public class CalcolatriceTest
     @Test
     public void testDividi() 
     {
-       // Calcolatrice c1= new Calcolatrice();
+       Calcolatrice c1= new Calcolatrice();
         String atteso,attuale;
         
         atteso="2";
