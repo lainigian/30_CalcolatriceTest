@@ -16,7 +16,14 @@ import org.junit.Before;
  */
 public class CalcolatriceTest 
 {
+    Calcolatrice c1;
     
+    @Before
+    public void inizializzazione()
+    {
+       c1=new Calcolatrice();
+        System.out.println("Vedi");
+    }
    
     /**
      * Test of somma method, of class Calcolatrice.
@@ -24,13 +31,14 @@ public class CalcolatriceTest
     @Test
     public void testSomma()
     {
-        Calcolatrice c1= new Calcolatrice();
+       // Calcolatrice c1= new Calcolatrice();
         int atteso,attuale;
         
         atteso=8;
         attuale=c1.somma(3, 5);
         
-        assertEquals("Somma fra 3 e 5", atteso,attuale);
+        //assertEquals("Somma fra 3 e 5", atteso,attuale);
+        assertTrue("aomma fra 3 e 5 = 8", atteso==attuale);
     }
 
     /**
@@ -39,7 +47,7 @@ public class CalcolatriceTest
     @Test
     public void testSottrai()
     {
-        Calcolatrice c1= new Calcolatrice();
+      //  Calcolatrice c1= new Calcolatrice();
         int atteso,attuale;
         
         atteso=-2;
@@ -51,16 +59,60 @@ public class CalcolatriceTest
     /**
      * Test of dividi method, of class Calcolatrice.
      */
-    @Test
+   @Test
     public void testDividi() 
     {
-       Calcolatrice c1= new Calcolatrice();
-        String atteso,attuale;
-        
-        atteso="2";
-        attuale=c1.dividi(10,5);
-        assertEquals("Divisione fra 10 e 5",atteso, attuale);
+      // Calcolatrice c1= new Calcolatrice();
+       int atteso,attuale;
+       atteso=2;
+       attuale=c1.dividi(10,5);
+       assertEquals("Divisione fra 10 e 5",atteso, attuale);
     }
+    
+    @Test (expected = ArithmeticException.class)
+    public void testDividiPerZero()
+    {
+     //  Calcolatrice c1= new Calcolatrice();
+       int atteso,attuale;
+        
+       atteso=2;
+       attuale=c1.dividi(10,0);    
+    }
+    
+    
+    @Test
+    public void testFibonacci()
+    {
+    //    Calcolatrice c1= new Calcolatrice();
+        //fibonacci(1)
+        int[] atteso,attuale;
+        atteso=new int[1];
+        atteso[0]=1; 
+        attuale=c1.fibonacci(1);
+        assertArrayEquals("Fibonacci di 1",atteso,attuale);
+        
+        //Fibonacci di 2
+        atteso=new int[2];
+        atteso[0]=1; 
+        atteso[1]=1;
+        attuale=c1.fibonacci(2);
+        assertArrayEquals("Fibonacci di 2",atteso,attuale);
+        
+        //Fibonacci di 7
+        atteso=new int[7];
+        atteso[0]=1; 
+        atteso[1]=1;
+        atteso[2]=2; 
+        atteso[3]=3;
+        atteso[4]=5; 
+        atteso[5]=8;
+        atteso[6]=13; 
+        attuale=c1.fibonacci(7);
+        assertArrayEquals("Fibonacci di 7",atteso,attuale);
+        
+    }
+    
+    
     
    
 }

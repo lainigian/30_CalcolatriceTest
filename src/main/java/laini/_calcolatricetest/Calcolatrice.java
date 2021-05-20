@@ -22,15 +22,11 @@ public class Calcolatrice
         return (x-y);
     }
     
-    public String dividi(int x, int y)
+    public int dividi(int x, int y)
     {
-        if (y==0)
-            return "Impossibile";
-        else
-            return Integer.toString(x/y);
-                    
+        return x/y;               
     }
-    /*
+    
     public int valoreAssoluto(int x)
     {
         if (x>=0)
@@ -39,13 +35,11 @@ public class Calcolatrice
             return -x;
     }
     
-    public int[] fibonacci(int x) throws FibonacciException
+    public int[] fibonacci(int x) 
     {
         
-        if (x<=0)
-        {
-            throw new FibonacciException();
-        }
+        
+        
         int[] successioneFibonacci=new int[x];
         
         if (x==1)
@@ -70,5 +64,5 @@ public class Calcolatrice
         return successioneFibonacci;
         
     }
-*/
+
 }
